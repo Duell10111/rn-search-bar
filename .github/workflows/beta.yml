@@ -15,11 +15,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup
-        uses: ./.github/actions/setup
-
       - name: Semantic Release (Versioning)
-        run: yarn release --dry-run --npm.skipChecks
+        run: npx semantic-release --dry-run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -31,14 +28,12 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Setup
         uses: ./.github/actions/setup
 
       - name: Publish to NPM
-        run: yarn release --npm.skipChecks
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
