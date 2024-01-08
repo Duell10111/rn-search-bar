@@ -10,11 +10,11 @@ class RnSearchBarViewManager: RCTViewManager {
   }
 }
 
-class RnSearchBarView : UIView {
+class RnSearchBarView : UISearchBar, UISearchBarDelegate {
 
   @objc var color: String = "" {
     didSet {
-      self.backgroundColor = hexStringToUIColor(hexColor: color)
+      //self.backgroundColor = hexStringToUIColor(hexColor: color)
     }
   }
 
