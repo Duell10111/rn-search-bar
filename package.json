@@ -140,7 +140,8 @@
   },
   "eslintIgnore": [
     "node_modules/",
-    "lib/"
+    "lib/",
+    "exampletvOS/"
   ],
   "prettier": {
     "quoteProps": "consistent",
